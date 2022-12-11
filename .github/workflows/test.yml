@@ -11,6 +11,6 @@ jobs:
           file: test.md
           skip-first: true
           exclude:
-             Tenent Phrygum animam ignorat humo versato
+             "Tenent Phrygum animam ignorat humo versato"
             
       - run: cat contents.md
