@@ -15,12 +15,12 @@ runs:
   - uses: actions/setup-python@v4
     with:
       python-version: '3.8' 
-  - run: pip install mistletoe
+  - run: pip install git+https://github.com/thatrandomperson5/AutoMarkdownContents
   - if: ${{ inputs.auto != 'false' }}
     env:
       arg: "-a"
   - if: ${{ inputs.auto == 'false' }}
     env:
       arg: ""
-  - run: python ContentsGen ${{ inputs.file }} $arg
+  - run: python -m AutoContentsGen ${{ inputs.file }} $arg
       
