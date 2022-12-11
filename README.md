@@ -18,7 +18,7 @@ steps:
   - uses: actions/checkout@v3
   - uses: thatrandomperson5/AutoMarkdownContents@v0.0.3
     with:
-      file: test.md
+      file: README.md
       auto: true
 ```
 # How to use
