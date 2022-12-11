@@ -42,7 +42,7 @@ for item in walkASTforHeadings(rendered):
 def addContents(original, out):
     finder = re.compile("((<!-- AutoContentStart -->).*(<!-- AutoContentEnd -->))", re.IGNORECASE | re.DOTALL)
     out = "<!-- AutoContentStart -->\n" + out + "\n<!-- AutoContentEnd -->"
-    new = finder.sub(out, original)
+    new = finder.sub(out, original, count=1)
     return new
 
 if "-a" in argv:
