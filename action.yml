@@ -12,6 +12,12 @@ inputs:
     type: boolean
     required: false
     default: false
+  exclude:
+    type: list
+    separator: '\n'
+    defualt: []
+    list-item:
+      type: string
 runs:
   using: "composite"
   env:
@@ -38,6 +44,10 @@ runs:
   - run: echo "ARGS=$ARGS " >>${GITHUB_ENV}
     shell: bash
     if: ${{ inputs.skip-first == 'false' }}
+  # -e
+  - run: echo "ARGS=$ARGS ${{ join(inputs.exclude, " ") }}" >>${GITHUB_ENV}
+    shell: bash
+
 
   - run: python -B -m AutoContentsGen$ARGS $FILE
     shell: bash
