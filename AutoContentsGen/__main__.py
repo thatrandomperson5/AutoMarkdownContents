@@ -1,3 +1,7 @@
+import sys
+
+sys.dont_write_bytecode = True
+
 import mistletoe
 from mistletoe.ast_renderer import ASTRenderer
 from sys import argv
