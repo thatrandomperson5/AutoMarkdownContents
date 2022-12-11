@@ -8,6 +8,7 @@ Automatically generate a Contents section in your readme
 - [How to use](#how-to-use)
     * [Params](#params)
         - [Auto](#auto)
+        - [Skip First](#skip-first)
 
 <!-- AutoContentEnd -->
 > Proudly auto-generated!
