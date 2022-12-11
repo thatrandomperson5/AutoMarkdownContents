@@ -1,12 +1,14 @@
 import mistletoe
 from mistletoe.ast_renderer import ASTRenderer
-from sys import argv
+from cli import parser
 import json, re
 
+argv = vars(parser.parse_args())
+
 non = re.compile("([^A-Za-z0-9-_~.])")
-with open(argv[1], "r") as f:
+with open(argv["file"], "r") as f:
     rendered = mistletoe.markdown(f, ASTRenderer)
-with open(argv[1], "r") as f:
+with open(argv["file"], "r") as f:
     fcontents = f.read()
 
 def walkASTforHeadings(ast):
@@ -21,7 +23,10 @@ rendered = json.loads(rendered)
 lastlvl = 0
 alvl = 0
 output = ""
-for item in walkASTforHeadings(rendered):
+walked = walkASTforHeadings(rendered)
+if argv["skip_first"]:
+    walked = list(walked)[1:]
+for item in walked:
     if item["level"] > lastlvl:
         alvl += 1
         lastlvl = item["level"]
@@ -32,6 +37,8 @@ for item in walkASTforHeadings(rendered):
         output += "    "
     name = item["children"][0]["content"]
     slug = non.sub("", name.replace(" ", "-")).lower()
+    if slug in argv["exclude"]:
+        continue
     if (alvl % 2) > 0:
         output += "- "
     else:
@@ -45,9 +52,11 @@ def addContents(original, out):
     new = finder.sub(out, original, count=1)
     return new
 
-if "-a" in argv:
-    with open(argv[1], "w") as f:
+if argv["auto"]:
+    with open(argv["file"], "w") as f:
         f.write(addContents(fcontents, output))
+    print(f"Inserted table of contents into {argv['file']}")
 else:
     with open("contents.md", "w") as f:
         f.write(output)
+    print(f"Created table of contents in contents.md from {argv['file']}")    
