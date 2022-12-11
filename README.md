@@ -4,6 +4,12 @@
 Automatically generate a Contents section in your readme
 # Contents
 <!-- AutoContentStart -->
+- [Contents](#contents)
+- [Example use](#example-use)
+- [How to use](#how-to-use)
+    * [Params](#params)
+        - [Auto](#auto)
+
 <!-- AutoContentEnd -->
 > Proudly auto-generated!
 # Example use
