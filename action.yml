@@ -1,1 +1,26 @@
-
+name: 'AutoMarkdownContents'
+description: 'Auto generate markdown contents section'
+inputs:
+  auto:
+    type: boolean
+    required: false
+    default: false
+  file: 
+    required: true
+    default: "README.md"
+runs:
+  using: "composite"
+  steps:
+  - uses: actions/checkout@v3
+  - uses: actions/setup-python@v4
+    with:
+      python-version: '3.8' 
+  - run: pip install -r requirements.txt
+  - if: ${{ inputs.auto != 'false' }}
+    env:
+      arg: "-a"
+  - if: ${{ inputs.auto == 'false' }}
+    env:
+      arg: ""
+  - run: python ContentsGen ${{ inputs.file }} $arg
+      
