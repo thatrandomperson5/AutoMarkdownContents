@@ -17,10 +17,10 @@ runs:
   - run: pip install git+https://github.com/thatrandomperson5/AutoMarkdownContents
     shell: bash
 
-  - run: python -m AutoContentsGen ${{ inputs.file }} -a
+  - run: python -m -B AutoContentsGen ${{ inputs.file }} -a
     shell: bash
     if: ${{ inputs.auto != 'false' }}
-  - run: python -m AutoContentsGen ${{ inputs.file }}
+  - run: python -m -B AutoContentsGen ${{ inputs.file }}
     shell: bash
     if: ${{ inputs.auto == 'false' }}
       
