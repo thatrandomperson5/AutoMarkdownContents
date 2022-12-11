@@ -21,7 +21,7 @@ inputs:
 runs:
   using: "composite"
   env:
-     ARGS:
+     ARGS: ""
   steps:
   - uses: actions/setup-python@v4
     with:
