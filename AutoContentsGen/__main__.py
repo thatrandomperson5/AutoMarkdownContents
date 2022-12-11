@@ -1,6 +1,6 @@
 import mistletoe
 from mistletoe.ast_renderer import ASTRenderer
-from cli import parser
+from .cli import parser
 import json, re
 
 argv = vars(parser.parse_args())
