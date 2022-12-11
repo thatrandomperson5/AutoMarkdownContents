@@ -37,3 +37,5 @@ The auto paramater can be passed with `auto: true`. This parameter is equivalent
 <!-- AutoContentEnd -->
 ```
 Everything in the middle will be replaced by the contents.
+### Skip First
+Can be passed with `skip-first: true`. Toggles off the defualt skip first param that is used to skip the title.
