@@ -10,7 +10,7 @@ jobs:
      runs-on: ubuntu-latest 
      steps:
        - uses: actions/checkout@v3
-       - uses: thatrandomperson5/AutoMarkdownContents@0.0.5
+       - uses: thatrandomperson5/AutoMarkdownContents@v0.0.5
          with:
            file: README.md
            auto: true
