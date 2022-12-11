@@ -6,6 +6,6 @@ jobs:
     name: Test the action on the file
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/AutoMarkdownContents@v1
+      - uses: thatrandomperson5/AutoMarkdownContents@v1
         with:
           file: README.md
