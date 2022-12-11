@@ -8,5 +8,5 @@ jobs:
       - uses: actions/checkout@v3
       - uses: thatrandomperson5/AutoMarkdownContents@v0.0.3
         with:
-          file: README.md
+          file: test.md
       - run: cat contents.md
