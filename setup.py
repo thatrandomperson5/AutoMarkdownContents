@@ -5,6 +5,6 @@ setup(name='AutoContentsGen',
       description='Python auto MD table of contents generator',
       author='thatrandomperson5',
       url='https://github.com/thatrandomperson5/AutoMarkdownContents/',
-      packages=['AutoMarkdownContents'],
+      packages=['AutoContentsGen'],
       install_requires=['mistletoe'],
      )
