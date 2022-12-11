@@ -10,7 +10,8 @@ jobs:
         with:
           file: test.md
           skip-first: true
-          exclude:
-             "tenent-phrygum-animam-ignorat-humo-versato"
+          exclude: |
+             tenent-phrygum-animam-ignorat-humo-versato
+             in-igneus-tenuantur-super
             
       - run: cat contents.md
