@@ -17,13 +17,11 @@ runs:
       python-version: '3.8' 
   - run: pip install git+https://github.com/thatrandomperson5/AutoMarkdownContents
     shell: bash
-  - env:
-      arg: "-a"
-    if: ${{ inputs.auto != 'false' }}
-  - env:
-      arg: ""
-    if: ${{ inputs.auto == 'false' }}
 
-  - run: python -m AutoContentsGen ${{ inputs.file }} $arg
+  - run: python -m AutoContentsGen ${{ inputs.file }} -a
     shell: bash
+    if: ${{ inputs.auto != 'false' }}
+  - run: python -m AutoContentsGen ${{ inputs.file }}
+    shell: bash
+    if: ${{ inputs.auto == 'false' }}
       
