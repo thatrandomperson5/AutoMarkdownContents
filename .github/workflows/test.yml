@@ -9,4 +9,8 @@ jobs:
       - uses: thatrandomperson5/AutoMarkdownContents@v1.0.4
         with:
           file: test.md
+          skip-first: true
+          exclude:
+             Tenent Phrygum animam ignorat humo versato
+            
       - run: cat contents.md
