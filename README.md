@@ -39,6 +39,8 @@ Here is some info about the params you can pass using the `with:` yaml syntax
 |Name|cli param|description|
 |-|-|-|
 |Auto|`-a`|Automatically fill in the contents section|
+|Exclude|`-e`|Exclude this header from the markdown, may mess up indentation|
+|Skip first|`--skip-first`|Toggle off the skipping of the fist header|
 ### Auto
 The auto paramater can be passed with `auto: true`. This parameter is equivalent to `-a` when using the cli tool. It automatically puts the contents in-between these two comments:
 ```html
