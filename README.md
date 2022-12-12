@@ -8,6 +8,10 @@ Automatically generate a Contents section in your readme
     * [Params](#params)
         - [Auto](#auto)
         - [Skip First](#skip-first)
+        - [Exclude](#exclude)
+    * [Use outside of actions](#use-outside-of-actions)
+        - [Installation](#installation)
+        - [Run](#run)
 
 <!-- AutoContentEnd -->
 > Proudly auto-generated!
