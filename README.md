@@ -19,7 +19,7 @@ Automatically generate a Contents section in your readme
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: thatrandomperson5/AutoMarkdownContents@v0.0.3
+  - uses: thatrandomperson5/AutoMarkdownContents@v1.1.1
     with:
       file: README.md
       auto: true
