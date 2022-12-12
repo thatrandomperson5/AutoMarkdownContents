@@ -15,7 +15,7 @@ inputs:
   exclude:
     type: list
     separator: '\n'
-    defualt: []
+    defualt: ''
     list-item:
       type: string
 runs:
@@ -51,6 +51,7 @@ runs:
         ${{ inputs.exclude }}
   - run: echo "ARGS=$ARGS -e $ITEM" >>${GITHUB_ENV}
     shell: bash
+    if: ${{ inputs.exclude != '' }}
     env:
       ITEM: ${{ join(fromJSON(env.EXCLUDE), ' -e ') }}
        
