@@ -6,7 +6,7 @@ jobs:
     name: Test the action on the file
     steps:
       - uses: actions/checkout@v3
-      - uses: thatrandomperson5/AutoMarkdownContents@95c6a974736ca43803a31a6facd15508cafc9521
+      - uses: thatrandomperson5/AutoMarkdownContents@037244cbd99f88a1d6e2886393b04841f3304019
         with:
           file: test.md
           skip-first: true
