@@ -24,13 +24,10 @@ lastlvl = 0
 alvl = 0
 output = ""
 walked = walkASTforHeadings(rendered)
+stack = []
 if argv["skip_first"]:
     walked = list(walked)[1:]
 for item in walked:
-    name = item["children"][0]["content"]
-    slug = non.sub("", name.replace(" ", "-")).lower()
-    if slug in argv["exclude"]:
-        continue
     if item["level"] > lastlvl:
         alvl += 1
         lastlvl = item["level"]
@@ -39,12 +36,18 @@ for item in walked:
         lastlvl = item["level"]
     for _ in range(alvl-1):
         output += "    "
+    name = item["children"][0]["content"]
+    slug = non.sub("", name.replace(" ", "-")).lower()
+    if stack.count(slug) > 0:
+        slug += f"-{stack.count(slug)}"
+    if slug in argv["exclude"]:
+        continue
     if (alvl % 2) > 0:
         output += "- "
     else:
         output += "* "
     output += f"[{name}](#{slug})\n"
-
+    stack.append(slug)
 
 def addContents(original, out):
     finder = re.compile("((<!-- AutoContentStart -->).*?(<!-- AutoContentEnd -->))", re.IGNORECASE | re.DOTALL)
