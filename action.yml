@@ -47,7 +47,7 @@ runs:
     shell: bash
     env:
       CODE:
-        output = '${{ inputs.exclude }}'.splitlines()
+        output = [x.strip() for x in '''${{ inputs.exclude }}'''.splitlines()]
   - run: echo "ARGS=$ARGS -e $ITEM" >>${GITHUB_ENV}
     shell: bash
     env:
