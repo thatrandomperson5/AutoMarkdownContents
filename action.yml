@@ -46,8 +46,7 @@ runs:
   - run: echo "EXCLUDE=$(python -c $CODE)" >>${GITHUB_ENV}
     shell: bash
     env:
-      CODE: |
-        "import os; import json; print(json.dumps([x.strip() for x in os.getenv("DATA").splitlines()]))"
+      CODE: "import os; import json; print(json.dumps([x.strip() for x in os.getenv('DATA').splitlines()]))"
       DATA:
         ${{ inputs.exclude }}
   - run: echo "ARGS=$ARGS -e $ITEM" >>${GITHUB_ENV}
