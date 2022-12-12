@@ -49,4 +49,39 @@ The auto paramater can be passed with `auto: true`. This parameter is equivalent
 ```
 Everything in the middle will be replaced by the contents.
 ### Skip First
-Can be passed with `skip-first: true`. Toggles off the defualt skip first param that is used to skip the title.
+Can be passed with `skip-first: true`. Toggles off the defualt skip first param that is used to the first header which is usually the title.
+### Exclude
+Can be passed using this format:
+```yaml
+exclude: |
+  exclude-this
+  exculde-this2
+```
+The values must be the slug or the url hash of the header that you wan't to be ignored from the table of contents.
+## Use outside of actions
+You can also use this outside of actions, the table in [params](#params) can give you the cli flags for the params.
+### Installation
+1. Install python
+2. run the command below
+  ```
+  pip install git+https://github.com/thatrandomperson5/AutoMarkdownContents
+  ```
+### Run
+run the `python -m ContentsGen [args]`. 
+
+The help command is `python -m ContentsGen -h`. The output is below
+```
+usage: ContentsGen [-h] [-a] [-e EXCLUDE] [--skip-first] file
+
+Makes a table of contents for markdown
+
+positional arguments:
+  file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -a, --auto
+  -e EXCLUDE, --exclude EXCLUDE
+  --skip-first
+
+```
