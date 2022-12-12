@@ -27,6 +27,12 @@ It will automatically generate an `contents.md` with a nested list as the table 
     * [Variarum cinnamaque huic accedere laudat Mygdoniusque margine](#variarum-cinnamaque-huic-accedere-laudat-mygdoniusque-margine)
     * [Tenent Phrygum animam ignorat humo versato](#tenent-phrygum-animam-ignorat-humo-versato)
     * [Speciem saxa mutatus portas Gangetica titulum cuncti](#speciem-saxa-mutatus-portas-gangetica-titulum-cuncti)
+- [Bello ero ferit](#bello-ero-ferit)
+    * [Virgineis neque collecti](#virgineis-neque-collecti)
+    * [In igneus tenuantur super](#in-igneus-tenuantur-super)
+    * [Nocte et confiteor equos](#nocte-et-confiteor-equos)
+    * [Bello fortis convellere liventia](#bello-fortis-convellere-liventia)
+
 ```
 ## Params
 Here is some info about the params you can pass using the `with:` yaml syntax
