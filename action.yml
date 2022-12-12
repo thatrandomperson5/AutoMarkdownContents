@@ -43,7 +43,7 @@ runs:
     shell: bash
     if: ${{ inputs.skip-first == 'false' }}
   # -e
-  - run: echo "EXCLUDE=$(python -c $CODE)" >>${GITHUB_ENV}
+  - run: echo EXCLUDE=$(python -c "$CODE") >>${GITHUB_ENV}
     shell: bash
     env:
       CODE: "import os; import json; print(json.dumps([x.strip() for x in os.getenv('DATA').splitlines()]))"
