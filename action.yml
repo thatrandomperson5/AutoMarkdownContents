@@ -51,7 +51,7 @@ runs:
   - run: echo "ARGS=$ARGS -e $ITEM" >>${GITHUB_ENV}
     shell: bash
     env:
-      ITEM: ${{ join(EXCLUDE, ' -e ') }}
+      ITEM: ${{ join($EXCLUDE, ' -e ') }}
        
 
 
