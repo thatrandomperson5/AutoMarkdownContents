@@ -31,6 +31,9 @@ It will automatically generate an `contents.md` with a nested list as the table 
 ```
 ## Params
 Here is some info about the params you can pass using the `with:` yaml syntax
+|Name|cli param|description|
+|-|-|-|
+|Auto|`-a`|Automatically fill in the contents section|
 ### Auto
 The auto paramater can be passed with `auto: true`. This parameter is equivalent to `-a` when using the cli tool. It automatically puts the contents in-between these two comments:
 ```html
