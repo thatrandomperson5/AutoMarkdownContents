@@ -43,11 +43,13 @@ runs:
     shell: bash
     if: ${{ inputs.skip-first == 'false' }}
   # -e
-  - run: echo "EXCLUDE=$(python -m Pywrap $CODE)" >>${GITHUB_ENV}
+  - run: echo "EXCLUDE=$(python -c $CODE)" >>${GITHUB_ENV}
     shell: bash
     env:
-      CODE:
-        output = [x.strip() for x in '''${{ inputs.exclude }}'''.splitlines()]
+      CODE: |
+        "import os; import json; print(json.dumps([x.strip() for x in os.getenv("DATA").splitlines()]))"
+      DATA:
+        ${{ inputs.exclude }}
   - run: echo "ARGS=$ARGS -e $ITEM" >>${GITHUB_ENV}
     shell: bash
     env:
