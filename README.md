@@ -1,5 +1,4 @@
-<!-- Below is exempt from the auto contents, in the future there will be a param for this --> 
-<h1> AutoMarkdownContents </h1>
+# AutoMarkdownContents
 
 Automatically generate a Contents section in your readme
 # Contents
