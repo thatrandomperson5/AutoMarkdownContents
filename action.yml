@@ -21,10 +21,12 @@ inputs:
 runs:
   using: "composite"
   steps:
-  - uses: actions/setup-python@v4
+  - name: Setup Python
+    uses: actions/setup-python@v4
     with:
       python-version: '3.8' 
-  - run: pip install git+https://github.com/thatrandomperson5/AutoMarkdownContents
+  - name: Install the CLI tool
+    run: pip install git+https://github.com/thatrandomperson5/AutoMarkdownContents
     shell: bash
     
   # Arg processing
@@ -56,8 +58,8 @@ runs:
       ITEM: ${{ join(fromJSON(env.EXCLUDE), ' -e ') }}
        
 
-
-  - run: python -B -m AutoContentsGen$ARGS $FILE
+  - name: Run main command
+    run: python -B -m AutoContentsGen$ARGS $FILE
     shell: bash
     env:
       FILE: ${{ inputs.file }}
